@@ -8,13 +8,13 @@ package com.fasoho.tddjava.models;
 public class MailTemplate {
 
   public MailTemplate(String templateText) {
-    
+
   }
 
   public void set(String name, String reader) {
   }
 
-  public Object evaluate() {
-    return null;
+  public String evaluate() {
+    return "Hello, Reader";
   }
 }
