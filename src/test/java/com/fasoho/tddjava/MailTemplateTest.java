@@ -12,6 +12,9 @@ import org.junit.jupiter.api.Test;
  */
 public class MailTemplateTest {
 
+  private MailTemplate mailTemplate;
+
+
   @Test
   public void oneVariable() throws Exception {
     MailTemplate mailTemplate = new MailTemplate("Hello, ${name}");
