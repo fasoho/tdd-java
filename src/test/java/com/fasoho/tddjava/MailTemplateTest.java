@@ -19,4 +19,11 @@ public class MailTemplateTest {
     assertEquals("Hello, Reader", mailTemplate.evaluate());
   }
 
+  @Test
+  public void differentTemplate() throws Exception {
+    MailTemplate mailTemplate = new MailTemplate("Hi, ${name}");
+    mailTemplate.set("name", "Person");
+    assertEquals("Hi, Person", mailTemplate.evaluate());
+  }
+
 }
