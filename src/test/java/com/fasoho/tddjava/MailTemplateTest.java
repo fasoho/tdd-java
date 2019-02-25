@@ -35,4 +35,12 @@ public class MailTemplateTest {
     assertEquals("1, 2, 3", mailTemplate.evaluate());
   }
 
+  @Test
+  public void unknownVariablesAreIgnored() throws Exception {
+    MailTemplate mailTemplate = new MailTemplate("Hello, ${name}");
+    mailTemplate.set("name", "Reader");
+    mailTemplate.set("doesnotexist", "Hi");
+    assertEquals("Hello, Reader", mailTemplate.evaluate());
+  }
+
 }
