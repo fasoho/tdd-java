@@ -7,14 +7,19 @@ package com.fasoho.tddjava.models;
  */
 public class MailTemplate {
 
-  public MailTemplate(String templateText) {
+  private String variableValue;
 
+  private String templateText;
+
+  public MailTemplate(String templateText) {
+    this.templateText = templateText;
   }
 
-  public void set(String name, String reader) {
+  public void set(String name, String value) {
+    this.variableValue = value;
   }
 
   public String evaluate() {
-    return "Hello, Reader";
+    return templateText.replaceAll("\\$\\{name\\}", variableValue);
   }
 }
