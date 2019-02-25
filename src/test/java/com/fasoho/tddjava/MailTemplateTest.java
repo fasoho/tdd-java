@@ -26,4 +26,13 @@ public class MailTemplateTest {
     assertEquals("Hi, Person", mailTemplate.evaluate());
   }
 
+  @Test
+  public void multipleVariables() throws Exception {
+    MailTemplate mailTemplate = new MailTemplate("${one}, ${two}, ${three}");
+    mailTemplate.set("one", "1");
+    mailTemplate.set("two", "2");
+    mailTemplate.set("three", "3");
+    assertEquals("1, 2, 3", mailTemplate.evaluate());
+  }
+
 }
